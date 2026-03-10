@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const CASE_STUDY_PASSWORD = 'matcase'
+const CASE_STUDY_PASSWORD = 'mat@case'
 
 export default function ProtectedPMCaseStudy() {
   const [password, setPassword] = useState('')
@@ -34,7 +34,7 @@ export default function ProtectedPMCaseStudy() {
           </div>
 
           <h1 className="text-[1.8rem] font-semibold tracking-[-0.03em]">
-            Protected mock case study
+            GovTech Consulting: Product Manager Internship Assignment 
           </h1>
 
           <p className="mt-3 max-w-[640px] text-[0.98rem] leading-[1.75] text-[#5d6c7b]">
