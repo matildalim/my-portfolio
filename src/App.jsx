@@ -1,4 +1,8 @@
+import { Routes, Route } from 'react-router-dom'
 import ProjectCard from './components/ProjectCard'
+import CustomCursor from './components/CustomCursor'
+import ProtectedCaseStudy from './pages/ProtectedCaseStudy'
+import ProtectedPMCaseStudy from './pages/ProtectedPMCaseStudy'
 
 const navItems = [
   { label: 'Work', href: '#work' },
@@ -11,56 +15,94 @@ const projects = [
   {
     title: 'CaseConnect / ComLink+',
     subtitle:
-      'Designing policy-sensitive workflow tools for coordination, access, and case participation across agencies.',
-    meta: 'GovTech Singapore',
-    tags: ['Workflow Design', 'Service Ops', 'Permissions'],
+      'Designing policy-sensitive case management workflow tools for coordination, access, and case participation across agencies.',
+    meta: 'GovTech Singapore | Protected Case Study',
+    tags: ['UX Design', 'State Handling', 'Permissions Logic'],
+    emoji: '🧩',
+    href: '/work/caseconnect',
+    protectedLabel: true,
   },
   {
-    title: 'Transformation Dashboard',
+    title: 'PermitsSG Modernisation',
     subtitle:
-      'Designing a progress dashboard that helps stakeholders track workstreams, milestones, and risks more clearly.',
-    meta: 'Dashboard / Information Design',
-    tags: ['Dashboards', 'Systems Thinking', 'Decision Support'],
+      'A product manager take-home assignment focused on de-risking the modernisation of a legacy government permits platform through structured discovery, phased delivery, and clear execution logic.',
+    meta: 'GovTech Consulting PM Take-Home | Protected Mock Case Study',
+    tags: ['Systems Thinking', 'Phasing Strategy', 'Product Requirements'],
+    emoji: '🏛️',
+    href: '/work/permits-sg',
+    protectedLabel: true,
   },
   {
-    title: 'SBS Transit Hackathon',
+    title: 'Project Bus',
     subtitle:
-      'Rapidly prototyping an operational concept under time pressure using systems thinking and iterative experimentation.',
-    meta: 'Hackathon Prototype',
-    tags: ['Rapid Prototyping', 'Mobility', 'Concept Design'],
+      'Designed and built a load-adaptive acceleration system in a 1-week hackathon, delivering a web MVP that provides real-time driver guidance and fleet analytics using passenger-load data.',
+    meta: 'SBS Transit Hackathon 2025 | 3rd Place',
+    tags: ['Problem Thinking', 'Design Strategy', 'Rapid Prototyping'],
+    emoji: '🚌',
+    href: 'https://drive.google.com/file/d/1m8_gdOhBFChNBCtUZ5MDOf9cqt9XEsBd/view?usp=sharing',
+  },
+  {
+    title: 'FoundIt',
+    subtitle:
+      'Framing lost-and-found as a trust and recovery problem, then prototyping a QR-enabled mobile experience that reduces friction, stress, and uncertainty for both owners and finders.',
+    meta: 'UX Prototyping Project',
+    tags: ['Problem Framing', 'Trust & Safety', 'UX Strategy'],
+    emoji: '🔎',
+    href: 'https://matildalim.framer.website/case-study/foundit',
   },
 ]
 
-export default function App() {
+function HomePage() {
   return (
-    <main className="min-h-screen bg-[#f5f5f3] text-[#24364b]">
-      <div className="mx-auto w-full max-w-[920px] px-10 pb-24 pt-12">
-        <header className="mb-20 grid grid-cols-[320px_1fr] items-start gap-12">
+    <main className="min-h-screen bg-[#f5f5f3] text-[#001666]">
+      <div className="mx-auto w-full max-w-[860px] px-4 pb-20 pt-10">
+        <header className="mb-16 grid grid-cols-[270px_1fr] items-start gap-10">
           <section>
-            <div className="mb-6 h-24 w-24 overflow-hidden rounded-full bg-[#d9d9d4] shadow-sm" />
+            <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-[#d9d9d4] text-[1.8rem] shadow-sm">
+              🧭
+            </div>
 
-            <h1 className="text-[3rem] leading-[1.02] font-semibold tracking-[-0.04em]">
-              Mat
+            <h1 className="text-[2.2rem] leading-[1.02] font-semibold tracking-[-0.04em]">
+              Matilda Lim
             </h1>
 
-            <p className="mt-3 text-[1.15rem] text-[#5f6f7f]">
-              UX Designer / Product Thinker / Systems Builder
+            <p className="mt-2 text-[0.95rem] text-[#5f6f7f]">
+              UX Design Intern @ GovTech Singapore
             </p>
 
-            <p className="mt-6 max-w-[300px] text-[1.02rem] leading-8 text-[#536272]">
-              I design for complex workflows, service systems, and operational
-              clarity — especially where ambiguity, constraints, and real-world
-              mess shape the experience.
+            <p className="mt-4 max-w-[285px] text-[0.95rem] leading-[1.65] text-[#536272]">
+              Passionate about solving problems with design and code (✿◠ᴗ◠)
             </p>
 
-            <div className="mt-8 flex items-center gap-4 text-sm text-[#536272]">
-              <a href="#">LinkedIn</a>
-              <a href="#">Resume</a>
-              <a href="#">Email</a>
+            <div className="mt-6 flex items-center gap-5 text-[0.95rem] text-[#536272]">
+              <a
+                href="https://www.linkedin.com/in/matildalim/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block transition duration-150 ease-out hover:-translate-y-[1px] hover:scale-[1.02] hover:text-[#24364b]"
+              >
+                LinkedIn
+              </a>
+
+              <a
+                href="https://drive.google.com/file/d/1jK2i61bUSs0Z50-drqDOB2HW_x9i_rlo/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block transition duration-150 ease-out hover:-translate-y-[1px] hover:scale-[1.02] hover:text-[#24364b]"
+              >
+                Resume
+              </a>
+
+              <a
+                href="mailto:matildalimyingxin@gmail.com"
+                className="inline-block transition duration-150 ease-out hover:-translate-y-[1px] hover:scale-[1.02] hover:text-[#24364b]"
+              >
+                Email
+              </a>
             </div>
           </section>
 
-          <nav className="flex items-center justify-end gap-10 pt-4 text-[1rem] text-[#596979]">
+          <nav className="flex items-center justify-end gap-8 pt-2 text-[0.95rem] text-[#596979]">
             {navItems.map((item) => (
               <a
                 key={item.label}
@@ -73,14 +115,15 @@ export default function App() {
           </nav>
         </header>
 
-        <section id="work" className="mb-16">
-          <h2 className="mb-4 text-[2rem] font-semibold tracking-[-0.03em]">
+        <section id="work" className="mb-10">
+          <h2 className="mb-3 text-[1.5rem] font-semibold tracking-[-0.03em]">
             Selected Work
           </h2>
-          <p className="max-w-[660px] text-[1rem] leading-8 text-[#5d6c7b]">
+          <p className="max-w-[620px] text-[0.95rem] leading-[1.8] text-[#5d6c7b]">
             A small selection of projects across public sector workflows,
-            dashboards, and rapid prototyping. The emphasis here is on how I
-            structure complex problems, not just how I polish screens.
+            product thinking, and rapid prototyping. The emphasis here is on how
+            I frame complex problems, define scope, and design for real-world
+            constraints.
           </p>
         </section>
 
@@ -90,7 +133,10 @@ export default function App() {
           ))}
         </section>
 
-        <section id="experiments" className="mt-20 border-t border-[#e5e2db] pt-10">
+        <section
+          id="experiments"
+          className="mt-20 border-t border-[#e5e2db] pt-10"
+        >
           <h3 className="text-[1.5rem] font-semibold tracking-[-0.03em]">
             Experiments
           </h3>
@@ -101,7 +147,10 @@ export default function App() {
           </p>
         </section>
 
-        <section id="writing" className="mt-20 border-t border-[#e5e2db] pt-10">
+        <section
+          id="writing"
+          className="mt-20 border-t border-[#e5e2db] pt-10"
+        >
           <h3 className="text-[1.5rem] font-semibold tracking-[-0.03em]">
             Writing
           </h3>
@@ -124,5 +173,18 @@ export default function App() {
         </section>
       </div>
     </main>
+  )
+}
+
+export default function App() {
+  return (
+    <>
+      <CustomCursor />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/work/caseconnect" element={<ProtectedCaseStudy />} />
+        <Route path="/work/permits-sg" element={<ProtectedPMCaseStudy />} />
+      </Routes>
+    </>
   )
 }
