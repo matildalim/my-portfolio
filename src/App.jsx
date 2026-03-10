@@ -66,15 +66,15 @@ function HomePage() {
               Matilda Lim
             </h1>
 
-            <p className="mt-2 text-[0.95rem] text-[#5f6f7f]">
+            <p className="mt-2 text-[0.95rem] text-[#1d3348]">
               UX Design Intern @ GovTech Singapore
             </p>
 
-            <p className="mt-4 max-w-[340px] text-[0.95rem] leading-[1.7] text-[#536272] md:max-w-[285px]">
-              Passionate about solving problems with design and code!
+            <p className="mt-4 max-w-[340px] text-[0.95rem] leading-[1.7] text-[#1d3348] md:max-w-[285px]">
+              Passionate about solving problems with design and code 🐰
             </p>
 
-            <div className="mt-6 flex items-center gap-5 text-[0.95rem] text-[#536272]">
+            <div className="mt-6 flex items-center gap-5 text-[0.95rem] text-[#1d3348]">
               <a
                 href="https://www.linkedin.com/in/matildalim/"
                 target="_blank"
@@ -121,7 +121,7 @@ function HomePage() {
       <h2 className="mb-3 text-[1.5rem] font-semibold tracking-[-0.03em]">
         Selected Work
       </h2>
-      <p className="max-w-[620px] text-[0.93rem] leading-[1.75] text-[#5d6c7b] md:text-[0.95rem] md:leading-[1.8]">
+      <p className="max-w-[620px] text-[0.93rem] leading-[1.75] text-[#1d3348] md:text-[0.95rem] md:leading-[1.8]">
         A small selection of projects across public sector workflows,
         product thinking, and rapid prototyping. The emphasis here is on how
         I frame complex problems, define scope, and design for real-world
@@ -152,7 +152,7 @@ function HomePage() {
           <h3 className="text-[1.5rem] font-semibold tracking-[-0.03em]">
             Experiments
           </h3>
-          <p className="mt-4 max-w-[700px] text-[1rem] leading-8 text-[#5d6c7b]">
+          <p className="mt-4 max-w-[700px] text-[1rem] leading-8 text-[#1d3348]">
             A future section for smaller prototypes, product assessments, and
             explorations that show how I think through problems under tighter
             constraints.
@@ -164,19 +164,46 @@ function HomePage() {
           className="mt-20 border-t border-[#e5e2db] pt-10"
         >
           <h3 className="text-[1.5rem] font-semibold tracking-[-0.03em]">
-            Tater Tots
+            AI’s little theory of me
           </h3>
-          <p className="mt-4 max-w-[700px] text-[1rem] leading-8 text-[#5d6c7b]">
-            Notes on ambiguity, product thinking, service systems, dashboards,
-            and designing in policy-sensitive contexts.
+          <p className="mt-4 max-w-[700px] text-[1rem] leading-8 text-[#1d3348]">
+            I like strawberry matcha, but not matcha. This is apparently a valid personality type.
+
+            I enjoy things that are matcha-adjacent, but not matcha itself. A fraud, but a consistent one.
+
+            I like interfaces that feel polite.
+
+            I trust quiet apps more than loud ones.
+
+            I notice when a button feels emotionally incorrect.
+
+            I like cute things, but only if they are a little restrained and not begging for attention.
+
+            I think color can either calm a person down or make them feel slightly lied to.
+
+            I have strong feelings about softness, spacing, and whether something feels too eager.
+
+            I like tiny details that make people feel safer, even if they never consciously notice them.
+
+            I think some products should feel like a helpful librarian, not an overfriendly intern.
+
+            I enjoy systems that make people feel less embarrassed for being human.
+
+            I am drawn to things that are gentle, orderly, and a little strange.
+
+            I think being observant is underrated and often mistaken for being quiet.
+
+            I like when something is cute but still composed.
+
+            I probably care too much about whether a digital experience feels emotionally tidy.
           </p>
         </section>
 
         <section id="about" className="mt-20 border-t border-[#e5e2db] pt-10">
           <h3 className="text-[1.5rem] font-semibold tracking-[-0.03em]">
-            About
+            What is this website for?
           </h3>
-          <p className="mt-4 max-w-[700px] text-[1rem] leading-8 text-[#5d6c7b]">
+          <p className="mt-4 max-w-[700px] text-[1rem] leading-8 text-[#1d3348]">
             This portfolio is intentionally quiet: desktop-first, narrow, and
             reading-oriented. It is meant to feel like a curated dossier rather
             than a gallery of glossy rectangles trying to win a startup beauty
