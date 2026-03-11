@@ -6,20 +6,53 @@ import ProtectedPMCaseStudy from './pages/ProtectedPMCaseStudy'
 import BoundTogetherCaseStudy from './pages/BoundTogetherCaseStudy'
 
 const navItems = [
+  { label: 'Experience', href: '#experience' },
   { label: 'Work', href: '#work' },
-  // { label: 'Experiments', href: '#experiments' },
   { label: 'Tater Tots', href: '#Tater Tots' },
   { label: 'About', href: '#about' },
+]
+
+const experienceItems = [
+  {
+    year: '2026',
+    org: 'GovTech Singapore',
+    role: 'UX Design Intern',
+  },
+  {
+    year: '2025',
+    org: 'TechFin Global',
+    role: 'Digital Marketing Intern',
+  },
+  {
+    year: '2025',
+    org: "People's Association",
+    role: 'Digital Transformation Intern',
+  },
+  {
+    year: '2021',
+    org: "Kopi Date",
+    role: 'Experience Design Intern',
+  },
+  {
+    year: '2020',
+    org: "Ministry of Social and Family Development (Singapore Girls' Home)",
+    role: 'Social Work Intern',
+  },
+    {
+    year: '2020',
+    org: "Montfort Care (Marine Parade Family Service Centre)",
+    role: 'Social Work Intern',
+  },
 ]
 
 const productUXProjects = [
   // {
   //   title: 'GatherSG Social Track: CaseConnect / ComLink+',
+  //   label: 'Protected case study',
   //   subtitle:
   //     'Designing policy-sensitive case management workflow tools for coordination, access, and case participation across agencies.',
-  //   meta: 'GovTech Singapore | Protected Case Study',
+  //   meta: 'GovTech Singapore',
   //   tags: ['UX Design', 'State Handling', 'Permissions Logic'],
-  //   emoji: '🗒',
   //   href: '/work/caseconnect',
   //   protectedLabel: true,
   // },
@@ -28,9 +61,8 @@ const productUXProjects = [
     label: '✍🏼 PM take-home',
     subtitle:
       'A product manager take-home assignment focused on de-risking the modernisation of a legacy government permits platform through structured discovery, phased delivery, and clear execution logic.',
-    meta: 'GovTech Consulting | Protected Mock Case Study',
+    meta: 'GovTech Consulting | Protected mock case study',
     tags: ['Systems Thinking', 'Phasing Strategy', 'Product Requirements'],
-    emoji: '🏛️',
     href: '/work/permits-sg',
     protectedLabel: true,
   },
@@ -41,17 +73,15 @@ const productUXProjects = [
       'Designed and built a load-adaptive acceleration system in a 1-week hackathon, delivering a web MVP that provides real-time driver guidance and fleet analytics using passenger-load data.',
     meta: 'SBS Transit Hackathon 2025 | 3rd Place',
     tags: ['Problem Thinking', 'Design Strategy', 'Rapid Prototyping'],
-    emoji: '🚌',
     href: 'https://drive.google.com/file/d/1m8_gdOhBFChNBCtUZ5MDOf9cqt9XEsBd/view?usp=sharing',
   },
   {
     title: 'FoundIt',
-    label: '🧩 Original UX Project',
+    label: '🧩 Original UX project',
     subtitle:
       'Framing lost-and-found as a trust and recovery problem, then prototyping a QR-enabled mobile experience that reduces friction, stress, and uncertainty for both owners and finders.',
-    meta: 'UX Prototyping Project',
+    meta: 'Independent concept | UX prototype',
     tags: ['Problem Framing', 'Trust & Safety', 'UX Strategy'],
-    emoji: '🔎',
     href: 'https://matildalim.framer.website/case-study/foundit',
   },
 ]
@@ -59,12 +89,11 @@ const productUXProjects = [
 const interactiveMotionProjects = [
   {
     title: 'Bound Together',
-    label: '🕹️ Co-Op Game',
+    label: '🕹️ Co-op game',
     subtitle:
       'A solo-designed two-player interactive experience exploring emotional connection through motion, proximity, and environmental feedback.',
-    meta: '12-Week Solo Build',
+    meta: '12-week solo build',
     tags: ['Interaction Design', 'Motion Design', 'Game UX'],
-    emoji: '🔗',
     href: '/work/bound-together',
   },
 ]
@@ -73,7 +102,7 @@ function HomePage() {
   return (
     <main className="min-h-screen bg-[#f5f5f3] text-[#001666]">
       <div className="mx-auto w-full max-w-[860px] px-5 pb-16 pt-8 sm:px-6 md:px-8 md:pb-20 md:pt-10">
-        <header className="mb-12 grid grid-cols-1 gap-8 md:mb-16 md:grid-cols-[270px_1fr] md:items-start md:gap-10">
+        <header className="mb-14 grid grid-cols-1 gap-8 md:mb-16 md:grid-cols-[270px_1fr] md:items-start md:gap-10">
           <section>
             <div className="mb-3 text-[1.2rem] leading-none text-[#f258fd]">
               (✿◠ᴗ◠)
@@ -131,6 +160,43 @@ function HomePage() {
             ))}
           </nav>
         </header>
+
+        <section id="experience" className="mb-10 border-t border-[#e5e2db] pt-10">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-[180px_1fr] md:gap-10">
+    <div>
+      <h2 className="text-[1.5rem] font-semibold tracking-[-0.03em]">
+        Experience
+      </h2>
+    </div>
+
+    <div className="space-y-5">
+      {experienceItems.map((item) => (
+        <div
+          key={`${item.year}-${item.org}`}
+          className="border-b border-[#eee9e2] pb-5 last:border-b-0 last:pb-0"
+        >
+          {/* Mobile */}
+          <div className="space-y-1 md:hidden">
+            <p className="text-[0.92rem] text-[#8d97a2]">{item.year}</p>
+            <p className="text-[1rem] font-medium text-[#24364b]">{item.org}</p>
+            <p className="text-[0.95rem] leading-[1.7] text-[#8d97a2]">
+              {item.role}
+            </p>
+          </div>
+
+          {/* Desktop */}
+          <div className="hidden md:grid md:grid-cols-[72px_1.2fr_1fr] md:gap-x-4 md:text-[0.95rem] md:leading-[1.7]">
+            <span className="text-[#8d97a2]">{item.year}</span>
+            <span className="text-[#24364b]">{item.org}</span>
+            <span className="text-[#8d97a2] md:text-right">{item.role}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+        <div className="mb-12 border-t border-[#e5e2db]" />
 
         <section id="work" className="mb-10">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-6">
@@ -281,7 +347,10 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/work/caseconnect" element={<ProtectedCaseStudy />} />
         <Route path="/work/permits-sg" element={<ProtectedPMCaseStudy />} />
-        <Route path="/work/bound-together" element={<BoundTogetherCaseStudy />} />
+        <Route
+          path="/work/bound-together"
+          element={<BoundTogetherCaseStudy />}
+        />
       </Routes>
     </>
   )
