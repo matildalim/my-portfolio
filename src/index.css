@@ -11,6 +11,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.font-editorial {
+  font-family: 'Cormorant Garamond', serif;
+}
+
 html {
   scroll-behavior: smooth;
 }

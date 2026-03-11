@@ -108,7 +108,7 @@ function HomePage() {
               (✿◠ᴗ◠)
             </div>
 
-            <h1 className="text-[2.2rem] leading-[1.02] font-semibold tracking-[-0.04em]">
+            <h1 className="font-editorial text-[2.9rem] leading-[0.95] font-semibold tracking-[-0.03em]">
               Matilda Lim
             </h1>
 
@@ -164,7 +164,7 @@ function HomePage() {
         <section id="experience" className="mb-10 border-t border-[#e5e2db] pt-10">
   <div className="grid grid-cols-1 gap-6 md:grid-cols-[180px_1fr] md:gap-10">
     <div>
-      <h2 className="text-[1.5rem] font-semibold tracking-[-0.03em]">
+      <h2 className="text-[1.5rem] font-semibold tracking-[-0.03em] text-[#0016666]">
         Experience
       </h2>
     </div>
