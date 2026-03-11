@@ -12,16 +12,16 @@ const navItems = [
 ]
 
 const projects = [
-  {
-    title: 'GatherSG Social Track: CaseConnect / ComLink+',
-    subtitle:
-      'Designing policy-sensitive case management workflow tools for coordination, access, and case participation across agencies.',
-    meta: 'GovTech Singapore | Protected Case Study',
-    tags: ['UX Design', 'State Handling', 'Permissions Logic'],
-    emoji: '🗒',
-    href: '/work/caseconnect',
-    protectedLabel: true,
-  },
+  // {
+  //   title: 'GatherSG Social Track: CaseConnect / ComLink+',
+  //   subtitle:
+  //     'Designing policy-sensitive case management workflow tools for coordination, access, and case participation across agencies.',
+  //   meta: 'GovTech Singapore | Protected Case Study',
+  //   tags: ['UX Design', 'State Handling', 'Permissions Logic'],
+  //   emoji: '🗒',
+  //   href: '/work/caseconnect',
+  //   protectedLabel: true,
+  // },
   {
     title: 'PermitsSG Modernisation',
     subtitle:
@@ -122,8 +122,7 @@ function HomePage() {
         Selected Work
       </h2>
       <p className="max-w-[620px] text-[0.93rem] leading-[1.75] text-[#1d3348] md:text-[0.95rem] md:leading-[1.8]">
-        A small selection of projects across public sector workflows,
-        product thinking, and rapid prototyping. The emphasis here is on how
+        A small selection of projects. The emphasis here is on how
         I frame complex problems, define scope, and design for real-world
         constraints.
       </p>
@@ -201,7 +200,7 @@ function HomePage() {
 
         <section id="about" className="mt-20 border-t border-[#e5e2db] pt-10">
           <h3 className="text-[1.5rem] font-semibold tracking-[-0.03em]">
-            What is this website for?
+            About
           </h3>
           <p className="mt-4 max-w-[700px] text-[1rem] leading-8 text-[#1d3348]">
             This portfolio is intentionally quiet: desktop-first, narrow, and
