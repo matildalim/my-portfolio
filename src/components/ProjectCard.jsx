@@ -1,65 +1,71 @@
+import { Link } from 'react-router-dom'
+
 export default function ProjectCard({
   title,
+  label,
   subtitle,
   meta,
   tags,
-  emoji,
   href,
-  protectedLabel = false,
+  protectedLabel,
 }) {
-  const isExternal = href?.startsWith('http')
+  const isExternal = href.startsWith('http')
 
-  return (
-    <a
-      href={href}
-      target={isExternal ? '_blank' : undefined}
-      rel={isExternal ? 'noreferrer' : undefined}
-      className="group block"
-    >
-      <article className="rounded-[16px] border border-[#e6e4de] bg-[#fafaf8] px-4 py-4 shadow-[0_1px_2px_rgba(25,25,25,0.03)] transition duration-150 hover:-translate-y-[1px] hover:bg-[#f9eef3] hover:shadow-[0_10px_25px_rgba(36,54,75,0.05)] md:px-5 md:py-5">
-        <div className="grid grid-cols-[64px_1fr] gap-4 md:grid-cols-[76px_1fr_auto] md:items-start">
-          <div className="flex h-16 w-16 items-center justify-center rounded-[12px] border border-[#ece9e2] bg-[#f0efea] text-[1.6rem] md:h-[76px] md:w-[76px] md:text-[2rem]">
-            {emoji}
-          </div>
-
-          <div>
-            <div className="flex flex-col gap-2 md:block">
-              <h3 className="mb-0 text-[1rem] font-semibold tracking-[-0.02em] text-[#24364b] transition group-hover:text-[#1d2c3d] md:mb-1 md:text-[1.05rem]">
-                {title}
-              </h3>
-
-              <p className="max-w-full text-[0.92rem] leading-[1.65] text-[#516171] md:max-w-[560px] md:text-[0.95rem] md:leading-[1.7]">
-                {subtitle}
-              </p>
-
-              <p className="mt-1 text-[0.82rem] italic text-[#7a8794] md:mt-2 md:text-[0.85rem]">
-                {meta}
-              </p>
-
-              <div className="mt-3 flex flex-wrap gap-2 md:mt-4">
-                {tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-[10px] border border-[#dfddd7] bg-white px-2.5 py-1.5 text-[0.76rem] text-[#415366] md:text-[0.8rem]"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-3 text-[0.86rem] text-[#4f6275] transition group-hover:text-[#24364b] md:hidden">
-                {protectedLabel ? 'Protected work →' : 'View work ↗'}
-              </div>
+  const content = (
+    <article className="group rounded-[24px] border border-[#e6e0d8] bg-[#fbfaf7] p-5 transition duration-200 ease-out hover:-translate-y-[2px] hover:shadow-[0_10px_30px_rgba(36,54,75,0.05)] sm:p-6">
+      <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+        <div className="min-w-0 flex-1">
+          {label ? (
+            <div className="mb-4">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#f8edf3] px-3 py-[8px] text-[0.78rem] font-medium leading-none text-[#7a6273]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#f2bfd6]" />
+                {label}
+              </span>
             </div>
-          </div>
+          ) : null}
 
-          <div className="hidden min-h-full items-start justify-end pl-4 md:flex">
-            <div className="pt-1 text-right whitespace-nowrap text-[0.88rem] text-[#4f6275] transition group-hover:text-[#24364b]">
-              {protectedLabel ? 'Protected work →' : 'View work ↗'}
-            </div>
+          <h3 className="text-[1.15rem] font-semibold leading-[1.35] tracking-[-0.025em] text-[#24364b]">
+            {title}
+          </h3>
+
+          <p className="mt-3 max-w-[700px] text-[1rem] leading-[1.9] text-[#586879]">
+            {subtitle}
+          </p>
+
+          <p className="mt-4 text-[0.9rem] leading-[1.7] text-[#97a1ac]">
+            {meta}
+          </p>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-[#f3f0eb] px-3 py-[7px] text-[0.76rem] font-medium leading-none text-[#6e7883]"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
-      </article>
-    </a>
+
+        <div className="shrink-0 text-[0.92rem] text-[#7a8794] transition group-hover:text-[#5f6e7d] md:pl-6">
+          {protectedLabel ? 'Protected work →' : 'View work ↗'}
+        </div>
+      </div>
+    </article>
+  )
+
+  if (isExternal) {
+    return (
+      <a href={href} target="_blank" rel="noreferrer" className="block">
+        {content}
+      </a>
+    )
+  }
+
+  return (
+    <Link to={href} className="block">
+      {content}
+    </Link>
   )
 }

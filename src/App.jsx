@@ -3,6 +3,7 @@ import ProjectCard from './components/ProjectCard'
 import CustomCursor from './components/CustomCursor'
 import ProtectedCaseStudy from './pages/ProtectedCaseStudy'
 import ProtectedPMCaseStudy from './pages/ProtectedPMCaseStudy'
+import BoundTogetherCaseStudy from './pages/BoundTogetherCaseStudy'
 
 const navItems = [
   { label: 'Work', href: '#work' },
@@ -11,7 +12,7 @@ const navItems = [
   { label: 'About', href: '#about' },
 ]
 
-const projects = [
+const productUXProjects = [
   // {
   //   title: 'GatherSG Social Track: CaseConnect / ComLink+',
   //   subtitle:
@@ -24,9 +25,10 @@ const projects = [
   // },
   {
     title: 'PermitsSG Modernisation',
+    label: '✍🏼 PM take-home',
     subtitle:
       'A product manager take-home assignment focused on de-risking the modernisation of a legacy government permits platform through structured discovery, phased delivery, and clear execution logic.',
-    meta: 'GovTech Consulting PM Take-Home | Protected Mock Case Study',
+    meta: 'GovTech Consulting | Protected Mock Case Study',
     tags: ['Systems Thinking', 'Phasing Strategy', 'Product Requirements'],
     emoji: '🏛️',
     href: '/work/permits-sg',
@@ -34,6 +36,7 @@ const projects = [
   },
   {
     title: 'Project Bus',
+    label: '💡 Hackathon',
     subtitle:
       'Designed and built a load-adaptive acceleration system in a 1-week hackathon, delivering a web MVP that provides real-time driver guidance and fleet analytics using passenger-load data.',
     meta: 'SBS Transit Hackathon 2025 | 3rd Place',
@@ -43,12 +46,26 @@ const projects = [
   },
   {
     title: 'FoundIt',
+    label: '🧩 Original UX Project',
     subtitle:
       'Framing lost-and-found as a trust and recovery problem, then prototyping a QR-enabled mobile experience that reduces friction, stress, and uncertainty for both owners and finders.',
     meta: 'UX Prototyping Project',
     tags: ['Problem Framing', 'Trust & Safety', 'UX Strategy'],
     emoji: '🔎',
     href: 'https://matildalim.framer.website/case-study/foundit',
+  },
+]
+
+const interactiveMotionProjects = [
+  {
+    title: 'Bound Together',
+    label: '🕹️ Co-Op Game',
+    subtitle:
+      'A solo-designed two-player interactive experience exploring emotional connection through motion, proximity, and environmental feedback.',
+    meta: '12-Week Solo Build',
+    tags: ['Interaction Design', 'Motion Design', 'Game UX'],
+    emoji: '🔗',
+    href: '/work/bound-together',
   },
 ]
 
@@ -59,7 +76,7 @@ function HomePage() {
         <header className="mb-12 grid grid-cols-1 gap-8 md:mb-16 md:grid-cols-[270px_1fr] md:items-start md:gap-10">
           <section>
             <div className="mb-3 text-[1.2rem] leading-none text-[#f258fd]">
-            (✿◠ᴗ◠)
+              (✿◠ᴗ◠)
             </div>
 
             <h1 className="text-[2.2rem] leading-[1.02] font-semibold tracking-[-0.04em]">
@@ -115,33 +132,65 @@ function HomePage() {
           </nav>
         </header>
 
-<section id="work" className="mb-10">
-  <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-6">
-    <div>
-      <h2 className="mb-3 text-[1.5rem] font-semibold tracking-[-0.03em]">
-        Selected Work
-      </h2>
-      <p className="max-w-[620px] text-[0.93rem] leading-[1.75] text-[#1d3348] md:text-[0.95rem] md:leading-[1.8]">
-        A small selection of projects. The emphasis here is on how
-        I frame complex problems, define scope, and design for real-world
-        constraints.
-      </p>
-    </div>
+        <section id="work" className="mb-10">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-6">
+            <div>
+              <h2 className="mb-3 text-[1.5rem] font-semibold tracking-[-0.03em]">
+                Selected Work
+              </h2>
+              <p className="max-w-[620px] text-[0.93rem] leading-[1.75] text-[#1d3348] md:text-[0.95rem] md:leading-[1.8]">
+                A small selection of projects. The emphasis here is on how I
+                frame complex problems, define scope, and design for real-world
+                constraints.
+              </p>
+            </div>
 
-    <a
-      href="https://matildalim.framer.website/"
-      target="_blank"
-      rel="noreferrer"
-      className="shrink-0 border-b border-transparent pb-[2px] text-[0.92rem] text-[#5f6e7d] transition duration-150 ease-out hover:border-[#b8c0c8] hover:-translate-y-[1px] hover:text-[#24364b]"
-    >
-      View all works ↗
-    </a>
-    </div>
-    </section>
-        <section className="space-y-6">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
-          ))}
+            <a
+              href="https://matildalim.framer.website/"
+              target="_blank"
+              rel="noreferrer"
+              className="shrink-0 border-b border-transparent pb-[2px] text-[0.92rem] text-[#5f6e7d] transition duration-150 ease-out hover:border-[#b8c0c8] hover:-translate-y-[1px] hover:text-[#24364b]"
+            >
+              View all works ↗
+            </a>
+          </div>
+        </section>
+
+        <section className="space-y-12">
+          <div>
+            <div className="mb-5">
+              <h3 className="text-[1.15rem] font-semibold tracking-[-0.02em] text-[#001666]">
+                Product / UX
+              </h3>
+              <p className="mt-1 text-[0.92rem] leading-[1.7] text-[#5f6e7d]">
+                Product, UX, and systems-focused projects.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {productUXProjects.map((project) => (
+                <ProjectCard key={project.title} {...project} />
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <div className="mb-5">
+              <h3 className="text-[1.15rem] font-semibold tracking-[-0.02em] text-[#001666]">
+                Interactive / Motion / Games
+              </h3>
+              <p className="mt-1 text-[0.92rem] leading-[1.7] text-[#5f6e7d]">
+                Experiments in interaction, motion, and emotionally legible
+                systems.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {interactiveMotionProjects.map((project) => (
+                <ProjectCard key={project.title} {...project} />
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* <section
@@ -166,9 +215,11 @@ function HomePage() {
             AI’s little theory of me
           </h3>
           <p className="mt-4 max-w-[700px] text-[1rem] leading-8 text-[#1d3348]">
-            I like strawberry matcha, but not matcha. This is apparently a valid personality type.
+            I like strawberry matcha, but not matcha. This is apparently a valid
+            personality type.
 
-            I enjoy things that are matcha-adjacent, but not matcha itself. A fraud, but a consistent one.
+            I enjoy things that are matcha-adjacent, but not matcha itself. A
+            fraud, but a consistent one.
 
             I like interfaces that feel polite.
 
@@ -176,25 +227,33 @@ function HomePage() {
 
             I notice when a button feels emotionally incorrect.
 
-            I like cute things, but only if they are a little restrained and not begging for attention.
+            I like cute things, but only if they are a little restrained and not
+            begging for attention.
 
-            I think color can either calm a person down or make them feel slightly lied to.
+            I think color can either calm a person down or make them feel
+            slightly lied to.
 
-            I have strong feelings about softness, spacing, and whether something feels too eager.
+            I have strong feelings about softness, spacing, and whether
+            something feels too eager.
 
-            I like tiny details that make people feel safer, even if they never consciously notice them.
+            I like tiny details that make people feel safer, even if they never
+            consciously notice them.
 
-            I think some products should feel like a helpful librarian, not an overfriendly intern.
+            I think some products should feel like a helpful librarian, not an
+            overfriendly intern.
 
-            I enjoy systems that make people feel less embarrassed for being human.
+            I enjoy systems that make people feel less embarrassed for being
+            human.
 
             I am drawn to things that are gentle, orderly, and a little strange.
 
-            I think being observant is underrated and often mistaken for being quiet.
+            I think being observant is underrated and often mistaken for being
+            quiet.
 
             I like when something is cute but still composed.
 
-            I probably care too much about whether a digital experience feels emotionally tidy.
+            I probably care too much about whether a digital experience feels
+            emotionally tidy.
           </p>
         </section>
 
@@ -222,6 +281,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/work/caseconnect" element={<ProtectedCaseStudy />} />
         <Route path="/work/permits-sg" element={<ProtectedPMCaseStudy />} />
+        <Route path="/work/bound-together" element={<BoundTogetherCaseStudy />} />
       </Routes>
     </>
   )
